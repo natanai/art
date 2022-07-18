@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: white;
+  background: #c0c0c0;
 }
 
 main {
@@ -33,7 +33,7 @@ h1 {
 hr {
   margin: 0;
   border: none;
-
+  width: 400px;
   height: 1px;
   opacity: 0.5;
   background: linear-gradient(
