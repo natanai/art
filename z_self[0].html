@@ -1,0 +1,83 @@
+<head>
+    <title>natanai.art </title>
+
+  <link
+  rel="stylesheet"
+  href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/defrag.png" />
+
+
+ <link rel="stylesheet" href="98.css">
+ <link rel="stylesheet" href="docs.css">
+ <link rel="stylesheet" href="vs.css">
+</head>
+
+<body>
+
+
+  <div>
+      <div class="title-bar">
+        <div class="title-bar-text">
+          self [0]
+        </div>
+      </div>
+
+
+
+    <div>
+      <pre style= "width: 2000px">
+        <code>30x35in cardboard, joint compound, india ink // applied by folded paper, hands, razor blades, and a pen</code>
+      </pre>
+    </div>
+  <div>
+    <div style>
+    <code> $4,700 </code>
+
+<div id="smart-button-container">
+      <div style="text-align: left;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'black',
+          layout: 'horizontal',
+          label: 'paypal',
+          tagline: 'false',
+
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"self [0] // 30x35in cardboard, joint compound, india ink // applied by folded paper, hands, razor blades, and a pen","amount":{"currency_code":"USD","value":4700}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+  </body>
