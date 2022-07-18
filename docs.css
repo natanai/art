@@ -150,3 +150,7 @@ button.active {
     overflow-x: scroll;
   }
 }
+
+html, body {
+    overscroll-behavior-x: none;
+}
